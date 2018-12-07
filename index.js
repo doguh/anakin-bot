@@ -21,8 +21,8 @@ bot.on('message', (user, userID, channelID, message, evt) => {
     if (found) {
         logger.debug(`Triggered by ${user}'s message: ${message}`)
         const men = found[0]
-        const women = men.replace(/men/, "women")
-        const children = men.replace(/men/, "children")
+        const women = men.replace(/men/i, "women")
+        const children = men.replace(/men/i, "children")
         bot.sendMessage({
             to: channelID,
             message: `Not just the ${men}, but the ${women} and ${children} too`
